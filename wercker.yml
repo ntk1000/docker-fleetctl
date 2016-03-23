@@ -1,0 +1,10 @@
+build:
+  box: ruby
+  dockerhub:
+    - internal/docker-push:
+      username: $USERNAME
+      password: $PASSWORD
+      repository: ntk1000/fleetctl
+  after-steps:
+    - wantedly/pretty-slack-notify:
+      webhook_url: $SLACK_WEBHOOK_URL
